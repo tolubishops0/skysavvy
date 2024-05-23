@@ -20,7 +20,7 @@ export default function ThemeSwitch() {
           top: "50%",
           right: "1%",
           borderRadius: "50%",
-          boxShadow: "0 0 10px 0 #5fcbd3",
+          boxShadow: "0 0 10px 0 rgb(255,215,0)",
           padding: ".5rem",
         }}
         onClick={() =>

@@ -1,14 +1,14 @@
-import Image from "next/image";
-import Nav from "./Nav";
+"use client";
 import ThemeSwitch from "./ThemToggle";
+import GetStarted from "./GetStarted";
+import useCuurLoc from "./hooks/useCuurLoc";
 
 export default function Home() {
+  useCuurLoc();
   return (
-    <div className=" h-full">
+    <div className="h-full w-[90%] mx-auto">
       <ThemeSwitch />
-      <Nav />
-      this is the page of the layouts
-      this is the page of the layouts
+      <GetStarted />
     </div>
   );
 }
