@@ -12,7 +12,7 @@ const useCuurLoc = () => {
     null
   );
   const [error, setError] = useState<string | null>(null);
-
+  console.log(error, "error");
   useEffect(() => {
     setisLoadingCurrLoc(true);
     const handleSuccess = (position: GeolocationPosition) => {
@@ -22,9 +22,10 @@ const useCuurLoc = () => {
         lon: longitude,
       };
       setCurrCityLoc(coords);
-      weatherState.setCurrCityLoc(coords);
       setisLoadingCurrLoc(false);
+      weatherState.setCurrCityLoc(coords, isLoadingCurrLoc);
     };
+
     const handleError = (error: GeolocationPositionError) => {
       setError(error.message);
       setisLoadingCurrLoc(false);
