@@ -6,7 +6,6 @@ import ThemeSwitch from "../ThemToggle";
 import { IGetCity } from "@/global";
 
 const HomePage = () => {
-  useFetchLoc(null);
   return (
     <div className="w-[100%] mx-auto">
       <ThemeSwitch />
