@@ -20,3 +20,21 @@ body {
 .shadow {
   box-shadow: #929090 0px 4px 6px -3px;
 }
+
+.input {
+  width: 90%;
+  height: 100%;
+  border-radius: 0.5rem 0 0 0.5rem;
+  background-color: transparent;
+  border: 1px solid rgb(255, 215, 0);
+  padding-left: 1rem;
+}
+
+.input:focus {
+  outline: none;
+  border: 1px solid rgb(255, 215, 0);
+}
+
+.shadow-gold {
+  box-shadow: 0 0 15px 0 rgb(255, 215, 0);
+}

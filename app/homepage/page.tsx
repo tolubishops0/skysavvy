@@ -3,11 +3,12 @@ import React from "react";
 import Nav from "../Nav";
 import useFetchLoc from "../hooks/useFetchLoc";
 import ThemeSwitch from "../ThemToggle";
+import { IGetCity } from "@/global";
 
 const HomePage = () => {
-  useFetchLoc();
+  useFetchLoc(null);
   return (
-    <div>
+    <div className="w-[100%] mx-auto">
       <ThemeSwitch />
       <Nav />
     </div>

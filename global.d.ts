@@ -34,6 +34,16 @@ export interface WeatherForecast {
     icon: string;
   }[];
   clouds: {
-    all: number
+    all: number;
   };
+}
+
+export interface IGetCity {
+  getCityTerm: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  setCityTerm: React.Dispatch<React.SetStateAction<string>>;
+  cityTerm: string;
+}
+
+export interface IGetCityWeatherr {
+  getCityWeather: (cityTerm: string) => void;
 }
