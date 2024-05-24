@@ -10,7 +10,7 @@ const GetStarted = () => {
     <div className="mx-auto w-[80%] h-[100vh] flex flex-col justify-center items-center gap-y-10">
       <div
         style={{
-          width: "100%",
+          width: "50%",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -25,7 +25,7 @@ const GetStarted = () => {
           }}
         />
       </div>
-      <button className="shadow bg-[rgb(255,215,0)] w-full h-[3rem] rounded font-semibold">
+      <button className="shadow bg-[rgb(255,215,0)] w-[50%] h-[3rem] rounded font-semibold">
         <Link href={"/homepage"}> Get Started</Link>
       </button>
     </div>
