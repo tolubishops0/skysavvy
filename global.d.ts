@@ -1,7 +1,39 @@
 export interface CoordinatesI {
-  lon: number;
-  lat: number;
+  lon: number | null;
+  lat: number | null;
 }
-export interface isLoadCurrLoc {
-  isLoadingCurrCityLocation: Boolean;
+export interface CityData {
+  city: WeatherData;
+  list: WeatherForecast[];
+}
+
+export interface WeatherData {
+  id: number;
+  name: string;
+  coord: CoordinatesI;
+  country: string;
+  population: number;
+  sunrise: number;
+  sunset: number;
+  timeZone: number;
+}
+export interface WeatherForecast {
+  dt: number;
+  main: {
+    temp: number;
+    feels_like: number;
+    temp_min: number;
+    temp_max: number;
+    pressure: number;
+    humidity: number;
+  };
+  weather: {
+    id: number;
+    main: string;
+    description: string;
+    icon: string;
+  }[];
+  clouds: {
+    all: number
+  };
 }

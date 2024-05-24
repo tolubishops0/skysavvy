@@ -3,14 +3,14 @@ import React, { useEffect, useState } from "react";
 import ThemeSwitch from "./ThemToggle";
 import GetStarted from "./Components/GetStarted";
 import AccessLocation from "./Components/AccessLocation";
-import useCuurLoc from "./hooks/useCuurLoc";
+import useFetchLoc from "./hooks/useFetchLoc";
 import weatherState from "./State/WeatherState";
 import Loader from "./Components/Loader";
 import { ToastContainer } from "react-toastify";
 
 export default function Home() {
-  useCuurLoc();
-  const { isLoadingCurrCityLocation, currCityCoords } = weatherState;
+  useFetchLoc();
+  const { currCityCoords } = weatherState;
   const [intialLoad, setIntialLoad] = useState<Boolean | null>(false);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function Home() {
       {intialLoad ? (
         <Loader />
       ) : currCityCoords ? (
-        <GetStarted isLoadingCurrCityLocation={isLoadingCurrCityLocation} />
+        <GetStarted />
       ) : (
         <AccessLocation />
       )}

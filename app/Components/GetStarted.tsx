@@ -3,13 +3,11 @@ import Link from "next/link";
 import Image from "next/image";
 import weathericon from "../Asset/weathericon.svg";
 import { ToastContainer } from "react-toastify";
-import { isLoadCurrLoc } from "@/global";
+// import { isLoadCurrLoc } from "@/global";
 
-const GetStarted = ({ isLoadingCurrCityLocation }: isLoadCurrLoc) => {
+const GetStarted = () => {
   return (
     <div className="mx-auto w-[80%] h-[100vh] flex flex-col justify-center items-center gap-y-10">
-  
-
       <div
         style={{
           width: "100%",
