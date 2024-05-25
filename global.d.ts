@@ -1,3 +1,5 @@
+import { IconType } from "react-icons";
+
 export interface CoordinatesI {
   lon: number | null;
   lat: number | null;
@@ -46,4 +48,16 @@ export interface IGetCity {
 
 export interface IGetCityWeatherr {
   getCityWeather: (cityTerm: string) => void;
+}
+
+export interface IIconSize {
+  size: number;
+}
+
+export interface NavContentType {
+  label: string;
+  link: string;
+  icon: IconType | React.ComponentType;
+  // iconT: React.ComponentType | null;
+  size: number;
 }

@@ -28,7 +28,7 @@ const useFetchLoc = (): IGetCityWeatherr => {
     };
 
     const handleError = (error: GeolocationPositionError) => {
-      weatherState.setCurrCityLoc(null, false);
+      weatherState.setError(error.code, false);
       setError(error.message);
       setisLoading(false);
       toast("Please enable your location");
@@ -41,7 +41,12 @@ const useFetchLoc = (): IGetCityWeatherr => {
     if (currCityLoc) {
       const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${currCityLoc.lat}&lon=${currCityLoc.lon}&appid=${apikey}&cnt=5&units=metric`;
       fetch(url)
-        .then((response) => response.json())
+        .then((response) => {
+          if (response.status === 404) {
+            weatherState.setError(response.status, false);
+          }
+          return response.json();
+        })
         .then((response) => {
           setisLoading(false);
           setLocationCurrweather(response);
@@ -49,7 +54,9 @@ const useFetchLoc = (): IGetCityWeatherr => {
         })
         .catch((error) => {
           setisLoading(false);
+          weatherState.setError(error.code, false);
           toast(error.message);
+          console.log(error);
         });
     }
   }, [currCityLoc]);

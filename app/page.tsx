@@ -10,7 +10,7 @@ import { ToastContainer } from "react-toastify";
 
 export default function Home() {
   useFetchLoc();
-  const { currCityCoords } = weatherState;
+  const { currCityCoords, error } = weatherState;
   const [intialLoad, setIntialLoad] = useState<Boolean | null>(false);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export default function Home() {
       ) : currCityCoords ? (
         <GetStarted />
       ) : (
-        <AccessLocation />
+        <AccessLocation error={error} />
       )}
     </div>
   );

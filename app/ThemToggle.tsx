@@ -16,12 +16,6 @@ export default function ThemeSwitch() {
         title={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} mode`}
         style={{
           cursor: "pointer",
-          position: "fixed",
-          top: "50%",
-          right: "1%",
-          borderRadius: "50%",
-          boxShadow: "0 0 10px 0 rgb(255,215,0)",
-          padding: ".5rem",
         }}
         onClick={() =>
           resolvedTheme === "dark" ? setTheme("light") : setTheme("dark")

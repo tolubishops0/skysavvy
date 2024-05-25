@@ -7,7 +7,7 @@ import { IGetCity } from "@/global";
 const HomePage = () => {
   return (
     <div className="w-[100%] mx-auto">
-      <ThemeSwitch />
+      {/* <ThemeSwitch /> */}
       <Nav />
     </div>
   );
