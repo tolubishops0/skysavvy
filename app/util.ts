@@ -9,7 +9,7 @@ import { IconType } from "react-icons";
 
 export const navContent: NavContentType[] = [
   {
-    label: "Change theme",
+    label: "",
     link: "theme",
     icon: ThemeSwitch,
     size: 25,

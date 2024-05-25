@@ -16,15 +16,20 @@ export default function ThemeSwitch() {
         title={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} mode`}
         style={{
           cursor: "pointer",
-          color: "rgb(255,215,0)",
         }}
         onClick={() =>
           resolvedTheme === "dark" ? setTheme("light") : setTheme("dark")
         }>
         {resolvedTheme === "dark" ? (
-          <MdOutlineWbSunny size={25} />
+          <span className="flex justify-start gap-x-4 items-start  ">
+            <p> Dark theme</p>
+            <MdOutlineWbSunny size={25} color={"rgb(255,215,0)"} />
+          </span>
         ) : (
-          <MdOutlineDarkMode size={25} />
+          <span className="flex justify-start gap-x-4 items-start ">
+            <p>Light theme</p>
+            <MdOutlineDarkMode size={25} />
+          </span>
         )}
       </div>
     );

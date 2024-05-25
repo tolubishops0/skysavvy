@@ -123,7 +123,7 @@ const Nav = () => {
               <div className="flex flex-col gap-3">
                 {navContent.map((item, index) => (
                   <div
-                    className="flex gap-1 items-center cursor-pointer "
+                    className="flex gap-1 items-center justify-start cursor-pointer "
                     key={index}>
                     <motion.p
                       {...framerText(index)}
@@ -174,8 +174,13 @@ const Nav = () => {
                               </motion.div>
                             )}
                           </div>
+                        ) : item.link === "theme" ? (
+                          <motion.span className=" gap-x-4 ">
+                            <p> {item.label}</p>
+                            <item.icon className="text-2xl text-[rgb(255,215,0)]" />
+                          </motion.span>
                         ) : (
-                          <motion.span className="flex items-center justify-start gap-x-4 ">
+                          <motion.span className="flex align-middle justify-center gap-x-4 ">
                             <p> {item.label}</p>
                             <item.icon className="text-2xl text-[rgb(255,215,0)]" />
                           </motion.span>
@@ -297,6 +302,11 @@ const Nav = () => {
                                           </motion.div>
                                         )}
                                       </div>
+                                    ) : item.link === "theme" ? (
+                                      <motion.span className=" gap-x-4 ">
+                                        <p> {item.label}</p>
+                                        <item.icon className="text-2xl text-[rgb(255,215,0)]" />
+                                      </motion.span>
                                     ) : (
                                       <motion.span className="flex items-center justify-start gap-x-4 ">
                                         <p> {item.label}</p>
