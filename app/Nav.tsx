@@ -40,6 +40,7 @@ const Nav = () => {
   const ref = useRef<HTMLDivElement>(null);
   const { getCityWeather } = useFetchLoc();
   const [showMenu, setShowMenu] = useState<Boolean>(false);
+  const [showSubMenu, setShowSubMenu] = useState<Boolean>(false);
   const [cityTerm, setCityTerm] = useState<string | "">("");
   const [activeTab, setActiveTab] = useState<string>("");
 
@@ -55,6 +56,9 @@ const Nav = () => {
 
   const menuButtonToggle = () => {
     setShowMenu(!showMenu);
+  };
+  const SubMenuButtonToggle = () => {
+    setShowSubMenu(!showSubMenu);
   };
 
   const handleTabClick = (
@@ -133,13 +137,29 @@ const Nav = () => {
                                     className={`flex items-center justify-start gap-x-4
           ${
             activeTab === item.link
-              ? `transition duration-1000 mb-1 border-b-2 border-[rgb(255,215,0)]`
+              ? `transition duration-1000 pb-1 border-b-2 border-[rgb(255,215,0)]`
               : ""
           }`}>
                                     <p> {item.label}</p>
-                                    <span>
+                                    {item.label === "units" ? (
+                                      <span>
+                                        <span>
+                                          <item.icon size={item.size} />
+                                          {item.label === "units" && (
+                                            <div className="sub-menu-container">
+                                              <div className="sub-menu-item">
+                                                Submenu Item 1
+                                              </div>
+                                              <div className="sub-menu-item">
+                                                Submenu Item 2
+                                              </div>
+                                            </div>
+                                          )}
+                                        </span>
+                                      </span>
+                                    ) : (
                                       <item.icon size={item.size} />
-                                    </span>
+                                    )}
                                   </a>
                                 </motion.p>
                               );
@@ -176,18 +196,40 @@ const framerSidebarBackground = {
 };
 
 const framerSidebarPanel = {
-  initial: { x: "-100%" },
-  animate: { x: 0 },
-  exit: { x: "-100%" },
-  transition: { duration: 0.5 },
+  initial: { y: "-100%" },
+  animate: { y: 0 },
+  exit: { y: "-100%" },
+  transition: { duration: 0.3 },
 };
 
 const framerText = (delay: number) => {
   return {
-    initial: { opacity: 0, x: -50 },
+    initial: { opacity: 0, y: -10 },
     animate: { opacity: 1, x: 0 },
     transition: {
-      delay: 0.5 + delay / 10,
+      delay: 0.3 + delay / 30,
     },
   };
+};
+
+const subMenuAnimate = {
+  enter: {
+    opacity: 1,
+    rotateX: 0,
+    transition: {
+      duration: 0.5,
+    },
+    display: "block",
+  },
+  exit: {
+    opacity: 0,
+    rotateX: -15,
+    transition: {
+      duration: 0.5,
+      delay: 0.3,
+    },
+    transitionEnd: {
+      display: "none",
+    },
+  },
 };
