@@ -9,19 +9,39 @@ import { IconType } from "react-icons";
 
 export const navContent: NavContentType[] = [
   {
-    label: "Theme",
+    label: "Change theme",
     link: "theme",
     icon: ThemeSwitch,
     size: 25,
   },
   {
-    label: "Units",
+    label: "Temp units",
     link: "units",
     icon: MdOutlineSwitchAccessShortcutAdd,
     size: 25,
+    subMenu: [
+      {
+        label: "F",
+        link: "units",
+        icon: MdOutlineSwitchAccessShortcutAdd,
+        size: 25,
+      },
+      {
+        label: "K",
+        link: "units",
+        icon: MdOutlineSwitchAccessShortcutAdd,
+        size: 25,
+      },
+      {
+        label: "C",
+        link: "units",
+        icon: MdOutlineSwitchAccessShortcutAdd,
+        size: 25,
+      },
+    ],
   },
   {
-    label: "Pointers",
+    label: "Get pointers",
     link: "",
     icon: MdOutlineRecommend,
     size: 25,

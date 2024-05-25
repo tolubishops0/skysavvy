@@ -58,6 +58,21 @@ export interface NavContentType {
   label: string;
   link: string;
   icon: IconType | React.ComponentType;
-  // iconT: React.ComponentType | null;
   size: number;
+  subMenu?: NavContentSunMenuType[];
+}
+
+export interface NavContentSunMenuType {
+  label: string;
+  link: string;
+  icon: IconType;
+  size: number;
+}
+
+export interface ContextMenuBar {
+  x: number;
+  y: number;
+  onCloseContextMenu: () => void;
+  parentRef: any;
+  children: any;
 }
