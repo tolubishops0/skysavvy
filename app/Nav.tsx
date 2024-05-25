@@ -79,8 +79,8 @@ const Nav = () => {
         <div className="shadow-gold">
           <div className="w-[90%] mx-auto h-48 lg:h-40 flex flex-col justify-center gap-y-10">
             <div className="flex justify-between items-center ">
-              <div>
-                <p className="italic font-black font-[briem-hand] text-2xl md:text-4xl ">
+              <div className=" z-[50]">
+                <p className="italic font-black font-[briem-hand] text-2xl md:text-4xl text-[rgb(255,215,0)]">
                   SkySavvy
                 </p>
               </div>
@@ -91,14 +91,14 @@ const Nav = () => {
                   cityTerm={cityTerm}
                 />
               </div>
-              <div className="flex gap-x-4 justify-center items-center">
+              <div className="flex gap-x-2 justify-center items-center">
+                <p>{city?.name}</p>
                 <Image
                   width={20}
                   height={20}
                   src={locationicom}
                   alt="location-icon"
                 />
-                <p>{city?.name}</p>
               </div>
               <div>
                 <button onClick={menuButtonToggle} className="lg:hidden">
@@ -133,7 +133,7 @@ const Nav = () => {
                                     className={`flex items-center justify-start gap-x-4
           ${
             activeTab === item.link
-              ? `transition duration-1000 mb-1 border-b-2 border-[goldColor] `
+              ? `transition duration-1000 mb-1 border-b-2 border-[rgb(255,215,0)]`
               : ""
           }`}>
                                     <p> {item.label}</p>

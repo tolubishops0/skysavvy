@@ -11,6 +11,9 @@ const config: Config = {
       backgroundColor: {
         goldColor: "rgb(255,215,0)",
       },
+      borderColor: {
+        goldColor: "rgb(255,215,0)",
+      },
     },
   },
   plugins: [],
